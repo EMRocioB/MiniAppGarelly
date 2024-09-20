@@ -1,0 +1,13 @@
+<!-- Crea un overlay que se muestra solo si hay una imagen seleccionada
+    El overlay cubre toda la pantalla y permite hacer clic en cualquier parte para cerrar el visor -->
+<div class="overlay" *ngIf="image" (click)="closeImage()">
+  
+    <!-- Contenedor para la tarjeta de imagen que muestra la imagen seleccionada
+        Se aplicar un estilo a este contenedor -->
+    <div class="image-card">
+      
+        <!-- Muestra la imagen utilizando la URL de image.imageSrc y el texto alternativo image.imageAlt
+            Al hacer clic en la imagen, también se invoca el método closeImage() para cerrar el visor -->
+        <img [src]="image.imageSrc" [alt]="image.imageAlt" (click)="closeImage()">
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<!-- Verifica si el array images tiene elementos
+  Si images no está vacío, muestra la galería de imágenes
+  Si no hay imágenes, se muestra el bloque noImages -->
+<div *ngIf="images && images.length; else noImages">
+  
+    <!-- Recorre el array images y genera un contenedor para cada imagen
+      Utiliza index para acceder al índice de la imagen en el array.
+      Al hacer clic en una imagen, se llama al método onImageClick(image)-->
+    <div *ngFor="let image of images; let i = index" class="image-container" (click)="onImageClick(image)">
+      
+        <!-- Muestra la imagen utilizando la URL de imageSrc y el texto alternativo imageAlt
+            La clase image-card aplica estilos CSS a la imagen-->
+        <img [src]="image.imageSrc" [alt]="image.imageAlt" class="image-card">
+    </div>
+    
+</div>
+
+<!-- Plantilla que se muestra cuando no hay imágenes
+     Muestra un mensaje simple indicando que no hay imágenes para mostrar-->
+<ng-template #noImages>
+  <p>No hay imágenes para mostrar</p>
+</ng-template>
+
+  

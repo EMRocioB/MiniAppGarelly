@@ -1,0 +1,55 @@
+/* La galería se hace transparente */
+.gallery.transparent {
+  opacity: 0.3;
+  pointer-events: none; 
+}
+
+/* El overlay ocupa toda la pantalla */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; 
+  transition: opacity 0.5s ease;
+}
+
+/* Estilo del card que contendrá la imagen */
+.image-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  max-width: 85%;
+  max-height: 85%;
+}
+
+/* Estilo de la imagen ampliada dentro del card */
+.image-card img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px;
+  width: 100vh;
+  margin: 10%;
+}
+
+/* Animación de cierre */
+.overlay.closing {
+  opacity: 0;
+}
+
+.overlay.closing .image-card {
+  transform: scale(0.1);
+}
+
+
+  
